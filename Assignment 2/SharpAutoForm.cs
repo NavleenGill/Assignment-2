@@ -14,7 +14,7 @@ namespace Assignment_2
     /// Class to Calculate the price of vehicle
     /// </summary>
     public partial class SharpAutoForm : Form
-    {
+    {//start of class
         //Private variables
         private double _basePrice;
         private double _additionalOption;
@@ -28,7 +28,7 @@ namespace Assignment_2
         /// Constructor of Class
         /// </summary>
         public SharpAutoForm()
-        {
+        {//start of constructor
             InitializeComponent();
 
             this.CenterToScreen();// show the form at center of screen
@@ -41,7 +41,7 @@ namespace Assignment_2
               _allowance=0;
               _amountDue=0;
               
-        }
+        }//end of constructor
 
         /// <summary>
         /// Event Handler for button "about" click
@@ -61,7 +61,7 @@ namespace Assignment_2
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void calculatePriceButton_Click(object sender, EventArgs e)
-        {
+        {//start of method
             // Initialize to zero
              _additionalOption = 0;
              _basePrice = 0;
@@ -98,14 +98,14 @@ namespace Assignment_2
                 MessageBox.Show("Please enter valid input. ", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-        }
+        }//end of method
          
         /// <summary>
         /// Function to calculate tax and return the total
         /// </summary>
         /// <returns></returns>
         private double calculateTax()
-        {
+        {//start of method
              _subTotal = 0;
              _total = 0;
              _subTotal = double.Parse( subTotalTextbox.Text);
@@ -114,7 +114,7 @@ namespace Assignment_2
             _total = _subTotal - _salesTax;  //Calculating for 13% of Sales Tax
             return _total;
             
-        }
+        }//end of method
 
         // Function to validate the valid price in textbox
         /// <summary>
@@ -122,7 +122,7 @@ namespace Assignment_2
         /// </summary>
         /// <returns>return true if textbox have valid values else return false</returns>
         private bool ValidateTextbox()
-        {
+        {//start of method
             double tempBasePrice,tempTradeInAllowance;
 
             //Check if base price and allowance contains the valid price 
@@ -135,7 +135,7 @@ namespace Assignment_2
             }
 
             return false;
-        }
+        }//end of method
 
         
         /// <summary>
@@ -144,7 +144,7 @@ namespace Assignment_2
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void stereoCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
+        {//start of method
               _additionalOption=0;
 
             // CHeck if stereo is checked or not
@@ -173,10 +173,8 @@ namespace Assignment_2
                     _additionalOption -= 425.76;
                     additionalOptionTextbox.Text = _additionalOption.ToString();
 
-            }
-
-           
-        }
+            }      
+        }//end of method
        
         
         /// <summary>
@@ -185,14 +183,14 @@ namespace Assignment_2
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void computerNavigCheckCheckedChanged(object sender, EventArgs e)
-        {
+        {//start of method
               _additionalOption = 0;
 
             if (computerNavigCheck.Checked)
             {
                 if (additionalOptionTextbox.Text == "")
                 {
-                    
+
                     _additionalOption = 1741.23;
                     additionalOptionTextbox.Text = _additionalOption.ToString();
                 }
@@ -211,10 +209,8 @@ namespace Assignment_2
                 _additionalOption -= 1741.23;
                 additionalOptionTextbox.Text = _additionalOption.ToString();
 
-            }
-
-           
-        }
+            }   
+        }//end of method
        
         
         /// <summary>
@@ -223,7 +219,7 @@ namespace Assignment_2
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void leatherInterCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
+        {//start of method
               _additionalOption = 0;
 
             if (leatherInterCheckbox.Checked)
@@ -251,7 +247,7 @@ namespace Assignment_2
 
             }
 
-        }
+        }//end of method
        
          
         /// <summary>
@@ -260,7 +256,7 @@ namespace Assignment_2
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void pearlizedRadio_CheckedChanged(object sender, EventArgs e)
-        {
+        {//start of method
               _additionalOption = 0;
 
             if (pearlizedRadio.Checked)
@@ -278,7 +274,6 @@ namespace Assignment_2
                     additionalOptionTextbox.Text = _additionalOption.ToString();
                 }
 
-
             }
             else
             {
@@ -288,7 +283,7 @@ namespace Assignment_2
 
             }
 
-        }
+        }//end of method
        
        /// <summary>
        /// Event Handler for customized Radio Button
@@ -296,7 +291,7 @@ namespace Assignment_2
        /// <param name="sender"></param>
        /// <param name="e"></param>
         private void customizedRadio_CheckedChanged(object sender, EventArgs e)
-        {
+        {//start of method
               _additionalOption = 0;
 
             if (customizedRadio.Checked)
@@ -313,8 +308,6 @@ namespace Assignment_2
                     _additionalOption += 599.99;
                     additionalOptionTextbox.Text = _additionalOption.ToString();
                 }
-
-
             }
             else
             {
@@ -323,7 +316,7 @@ namespace Assignment_2
                 additionalOptionTextbox.Text = _additionalOption.ToString();
 
             }
-        }
+        }//end of method
 
         /// <summary>
         /// Event Handler for clear all the fields
@@ -331,7 +324,7 @@ namespace Assignment_2
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void clearPriceButton_Click(object sender, EventArgs e)
-        {
+        {//start of method
             // Clear all textboxes
             basePriceTextbox.Text = "";
             subTotalTextbox.Text = "";
@@ -347,7 +340,7 @@ namespace Assignment_2
             pearlizedRadio.Checked = false;
             customizedRadio.Checked = false;
             standardRadio.Checked = true;
-        }
+        }//end of method
     
         /// <summary>
         ///  Event Handler for exit button click
@@ -365,7 +358,7 @@ namespace Assignment_2
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void fontToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {//start of method
             FontDialog fontDialog = new FontDialog();
             DialogResult result = fontDialog.ShowDialog();  // Show the font dialog and get the result
             
@@ -377,7 +370,7 @@ namespace Assignment_2
                 amountDueTextbox.Font = font;
                 basePriceTextbox.Font = font;
             }
-        }
+        }//end of method
 
         /// <summary>
         /// Event Handler for color button click in menu
@@ -397,8 +390,7 @@ namespace Assignment_2
                 basePriceTextbox.ForeColor = colorDialog.Color;
                  
             }
-        }
-     
- 
-    }
+        }//end of method
+      
+    }//end of class
 }
